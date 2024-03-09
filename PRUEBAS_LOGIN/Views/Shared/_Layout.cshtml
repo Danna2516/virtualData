@@ -1,0 +1,87 @@
+﻿
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body style="margin: 0; padding: 0;">
+    <div class="container-fluid" style="margin: 0; padding: 0;">
+        <div class="row" style="margin: 0; padding: 0;">
+            <!-- Panel superior -->
+            <nav class="col-md-12" style="background-color: lawngreen; padding: 20px; margin: 0; display: flex; align-items: center; justify-content: space-between;">
+
+                <!-- VIRTUAL DATA en el lado izquierdo -->
+                <div>
+                    <a href="#" class="btn btn-primary" style="color: black; background-color: lawngreen; border: none; font-size: 24px; font-weight: bold; text-decoration: none;">VIRTUAL DATA 1.0</a>
+                </div>
+
+
+
+                <!-- Mi Usuario en el lado derecho -->
+                <div style="display: flex; align-items: center;">
+                    <a href="@Url.Action("MiUsuario", "Home")" class="btn btn-secondary" style="color: black; background-color: lawngreen; border: none; font-size: 16px; text-decoration: none;">Mi Usuario</a>
+                    <img src="~/Img/icono-perfil-avatar_188544-4755-removebg-preview.png" alt="Logo" style="width: 40px; height: 40px; margin-left: 10px;">
+                </div>
+            </nav>
+
+
+            <!-- Panel lateral izquierdo -->
+            <nav class="col-md-2 bg-light sidebar" style="height: 100vh; background-color: dimgray; padding: 20px; margin: 0;">
+                <ul class="nav flex-column" style="padding-left: 0;">
+                    <br />
+
+                    <li class="nav-item" style="margin-bottom: 20px;">
+                        @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link", style = "color: black; font-size: 20px; font-style: italic; text-decoration: none;" })
+                    </li>
+
+                    <li class="nav-item" style="margin-bottom: 20px;">
+                        @Html.ActionLink("Usuarios", "Contact", "Home", new { area = "" }, new { @class = "nav-link", style = "color: black; font-size: 20px; font-style: italic; text-decoration: none;" })
+                    </li>
+
+                    <li class="nav-item" style="margin-bottom: 20px;">
+                        @Html.ActionLink("Productos", "About", "Home", new { area = "" }, new { @class = "nav-link", style = "color: black; font-size: 20px; font-style: italic; text-decoration: none;" })
+                    </li>
+
+                    <li class="nav-item" style="margin-bottom: 20px;">
+                        @Html.ActionLink("Categorías", "Categorias", "Home", new { area = "" }, new { @class = "nav-link", style = "color: black; font-size: 20px; font-style: italic; text-decoration: none;" })
+                    </li>
+
+                    <li class="nav-item" style="margin-bottom: 20px;">
+                        @Html.ActionLink("Compras", "Compras", "Home", new { area = "" }, new { @class = "nav-link", style = "color: black; font-size: 20px; font-style: italic; text-decoration: none;" })
+                    </li>
+
+                    <li class="nav-item" style="margin-bottom: 20px;">
+                        @Html.ActionLink("Ventas", "Ventas", "Home", new { area = "" }, new { @class = "nav-link", style = "color: black; font-size: 20px; font-style: italic; text-decoration: none;" })
+                    </li>
+
+                    <li class="nav-item">
+                        @Html.ActionLink("Cerrar Sesion", "CerrarSesion", "Home", new { area = "" }, new { @class = "nav-link", style = "color: black; font-size: 20px; font-style: italic; text-decoration: none;" })
+                    </li>
+                </ul>
+            </nav>
+            </nav>
+
+            <!-- Contenido principal -->
+            <main role="main" class="col-md-10" style="margin: 0; padding: 0;">
+                <div style="background-color:white; padding: 30px; height: 100vh;">
+                    @RenderBody()
+                </div>
+            </main>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+

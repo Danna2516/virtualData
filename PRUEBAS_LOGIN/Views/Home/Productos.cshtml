@@ -1,0 +1,68 @@
+﻿
+
+<main aria-labelledby="title">
+    <h2 id="title">@ViewBag.Title</h2>
+    <h3>@ViewBag.Message</h3>
+    <img src="~/Img/Captura de pantalla 2023-10-30 002831.jpg" />
+
+    <p>Gestión de productos</p>
+
+    <form class="form-control" action="/Home/About" method="post" enctype="multipart/form-data">
+        <label for="IdProducto">IdProducto:</label>
+        <input type="text" id="IdProducto" name="IdProducto" placeholder="IdProducto" />
+
+        <label for="NombreProducto">NombreProducto:</label>
+        <input type="text" id="NombreProducto" name="NombreProducto" placeholder="NombreProducto" />
+
+        <label for="Marca">Marca:</label>
+        <input type="text" id="Marca" name="Marca" placeholder="Marca" />
+
+        <label for="Presentacion">Presentacion:</label>
+        <input type="text" id="Presentacion" name="Presentacion" placeholder="Presentacion" />
+
+        <label for="Descripcion">Descripcion:</label>
+        <input type="text" id="Descripcion" name="Descripcion" placeholder="Descripcion" />
+
+        <label for="PrecioUnitarioEntrada">PrecioUnitarioEntrada:</label>
+        <input type="text" id="PrecioUnitarioEntrada" name="PrecioUnitarioEntrada" placeholder="PrecioUnitarioEntrada" />
+
+        <label for="PrecioUnitarioSalida">PrecioUnitarioSalida:</label>
+        <input type="text" id="PrecioUnitarioSalida" name="PrecioUnitarioSalida" placeholder="PrecioUnitarioSalida" />
+
+        <input type="submit" name="boton" value="Actualizar" />
+        <input type="submit" name="boton" value="Agregar" />
+        <input type="submit" name="boton" value="Eliminar" />
+    </form>
+    <br />
+    <br />
+    <br />
+
+    <h2>Lista de Productos</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>IdProducto</td>
+                <td>NombreProducto</td>
+                <td>Marca</td>
+                <td>Presentacion</td>
+                <td>Descripcion</td>
+                <td>PrecioUnitarioEntrada</td>
+                <td>PrecioUnitarioSalida</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var pro in Model)
+            {
+                <tr>
+                    <td>@pro.IdProducto</td>
+                    <td>@pro.NombreProducto</td>
+                    <td>@pro.Marca</td>
+                    <td>@pro.Presentacion</td>
+                    <td>@pro.Descripcion</td>
+                    <td>@pro.PrecioUnitarioEntrada</td>
+                    <td>@pro.PrecioUnitarioSalida</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</main>
